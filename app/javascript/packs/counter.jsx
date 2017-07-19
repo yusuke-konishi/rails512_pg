@@ -2,10 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 class Counter extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {counter: 0}
-    this.increment = this.increment.bind(this)
   }
 
   increment() {
@@ -18,15 +17,13 @@ class Counter extends React.Component {
     return (
       <div>
         <div>Counter = {this.state.counter}</div>
-        <button onClick={this.increment}>Click me!</button>
+        <button onClick={this.increment.bind(this)}>Click me!</button>
       </div>
     )
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Counter />,
-    document.getElementById('counter')
-  )
-})
+ReactDOM.render(
+  <Counter />,
+  document.getElementById('counter')
+)
