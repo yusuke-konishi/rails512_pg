@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'top/counter'
+
   get 'hello/world'
 
   resources :users
